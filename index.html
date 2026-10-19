@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АНО «Русский Навигатор» — Просветительский центр</title>
+<meta name="description" content="Просветительский центр «Русский Навигатор».">
+
+<!-- Open Graph (WhatsApp, Telegram, ВК). Замените ВАШ-ДОМЕН на адрес сайта -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="АНО Просветительский центр «Русский Навигатор»">
+<meta property="og:description" content="Просветительский центр «Русский Навигатор»: проекты, команда, партнёры.">
+<meta property="og:url" content="https://ВАШ-ДОМЕН/">
+<meta property="og:image" content="https://ВАШ-ДОМЕН/logo.png">
+<meta property="og:site_name" content="Русский Навигатор">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="icon" type="image/png" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--cream:#fbf5ea;--sand:#f1e4cc;--wine:#8b3a2b;--wine-d:#6b2b1f;--gold:#b98a3e;--brown:#3d2b20;--muted:#7a6656}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Lora',serif;color:var(--brown);background:var(--cream);line-height:1.75}
+h1,h2,h3,h4,h5,.brand{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;color:var(--wine-d)}
+.navbar{background:rgba(251,245,234,.96);border-bottom:1px solid #e6d5b5;backdrop-filter:blur(6px)}
+.navbar-brand img{height:48px;width:auto}
+.brand-fallback{display:none;font-size:1.6rem}
+.nav-link{color:var(--brown)!important;font-size:.95rem}
+.nav-link:hover{color:var(--wine)!important}
+.btn-main{background:var(--wine);color:#fff;border:1px solid var(--wine);border-radius:3px;padding:.65rem 1.6rem;letter-spacing:.04em}
+.btn-main:hover{background:var(--wine-d);color:#fff}
+.btn-line{border:1px solid var(--wine);color:var(--wine);border-radius:3px;padding:.65rem 1.6rem}
+.btn-line:hover{background:var(--wine);color:#fff}
+.hero{padding:100px 0 90px;text-align:center;background:radial-gradient(circle at 50% 0%,#fff3d9 0%,var(--cream) 70%);border-bottom:1px solid #ecdcbc}
+.hero .logo-big{max-height:150px;max-width:100%;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.3rem,5vw,3.8rem);line-height:1.1}
+.hero .lead{font-style:italic;color:var(--muted);max-width:680px;margin:1.2rem auto 2rem}
+.eyebrow{display:block;text-transform:uppercase;letter-spacing:.22em;font-size:.74rem;color:var(--gold);margin-bottom:.6rem}
+.sec{padding:84px 0}
+.alt{background:var(--sand)}
+.sec-title{font-size:2.5rem;text-align:center;margin-bottom:.3rem}
+.orn{text-align:center;color:var(--gold);margin-bottom:2.8rem;letter-spacing:.5em}
+.orn::before{content:"✦ ✦ ✦"}
+.box{background:#fffdf8;border:1px solid #e6d5b5;border-radius:6px;padding:1.8rem;height:100%}
+.facts div{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px dashed #d9c49b;font-size:.96rem}
+.facts div:last-child{border:0}
+.facts span:first-child{color:var(--muted)}
+.facts span:last-child{font-weight:600;text-align:right}
+
+/* Заготовки под фото: если файла нет — виден значок, если файл появился — фото */
+.ph{background-color:#ead9b8;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.ph::before{content:"";position:absolute;inset:0;background:center/32% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b98a3e' opacity='.55'%3E%3Cpath d='M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z'/%3E%3C/svg%3E")}
+.ph.img::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b98a3e' opacity='.55'%3E%3Cpath d='M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z'/%3E%3C/svg%3E")}
+.avatar{width:170px;height:170px;border-radius:50%;margin:0 auto 1.1rem;border:4px solid #fffdf8;box-shadow:0 0 0 2px var(--gold)}
+.person{text-align:center}
+.person h5{font-size:1.35rem;margin-bottom:.1rem}
+.person small{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
+.cover{height:190px;border-radius:6px 6px 0 0}
+.proj{padding:0;overflow:hidden}
+.proj .in{padding:1.4rem 1.5rem 1.6rem}
+.proj,.partner{transition:.25s}
+.proj:hover,.partner:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(107,43,31,.12)}
+.partner{text-align:center;padding:1.4rem 1rem}
+.partner .plogo{height:90px;border-radius:6px;margin-bottom:.8rem}
+.partner .plogo::before{background-size:30%}
+.partner h6{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--wine-d);margin:0}
+footer{background:var(--brown);color:#dfcfb4;padding:50px 0 24px;font-size:.9rem}
+footer a{color:#dfcfb4;text-decoration:none}footer a:hover{color:#fff}
+.fill{background:#fff0b8;padding:0 .3rem;border-radius:2px;font-weight:400!important}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#top">
+      <!-- ЛОГОТИП: загрузите файл logo.png в корень репозитория, рядом с index.html -->
+      <img src="logo.png" alt="Русский Навигатор" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="brand brand-fallback">Русский Навигатор</span>
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#about">О центре</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
+        <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
+        <li class="nav-item"><a class="nav-link" href="#partners">Партнёры</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-main" href="#support">Поддержать</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <img src="logo.png" alt="" class="logo-big" onerror="this.style.display='none'">
+    <span class="eyebrow">Автономная некоммерческая организация</span>
+    <h1>Просветительский центр<br>«Русский Навигатор»</h1>
+    <p class="lead">Здесь будет девиз или краткое описание миссии центра — одно-два предложения.</p>
+    <a href="#about" class="btn btn-main me-2">О центре</a>
+    <a href="#support" class="btn btn-line">Поддержать</a>
+  </div>
+</header>
+
+<!-- ОСНОВНЫЕ СВЕДЕНИЯ -->
+<section class="sec" id="about">
+  <div class="container">
+    <h2 class="sec-title">Основные сведения</h2><div class="orn"></div>
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="box">
+          <h4>О центре</h4>
+          <p>Здесь будет рассказ об организации: когда и с какой целью создана, чем занимается, какие задачи решает.</p>
+          <p class="mb-0">Второй абзац: история, принципы работы, география деятельности.</p>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="box facts">
+          <h4>Сведения об организации</h4>
+          <div><span>Полное наименование</span><span>АНО ПЦ «Русский Навигатор»</span></div>
+          <div><span>Дата регистрации</span><span class="fill">заполнить</span></div>
+          <div><span>Руководитель</span><span class="fill">заполнить</span></div>
+          <div><span>ИНН / ОГРН</span><span class="fill">заполнить</span></div>
+          <div><span>Адрес</span><span class="fill">заполнить</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРОЕКТЫ -->
+<section class="sec alt" id="projects">
+  <div class="container">
+    <h2 class="sec-title">Наши проекты</h2><div class="orn"></div>
+    <div class="row g-4">
+      <!-- Обложка: положите файл projects/project1.jpg (и т.д.) — фото подставится само -->
+      <div class="col-md-4"><div class="box proj"><div class="cover ph img" style="background-image:url('projects/project1.jpg')"></div><div class="in"><h4>Название проекта</h4><p class="mb-0">Краткое описание проекта в 2–3 предложениях.</p></div></div></div>
+      <div class="col-md-4"><div class="box proj"><div class="cover ph img" style="background-image:url('projects/project2.jpg')"></div><div class="in"><h4>Название проекта</h4><p class="mb-0">Краткое описание проекта в 2–3 предложениях.</p></div></div></div>
+      <div class="col-md-4"><div class="box proj"><div class="cover ph img" style="background-image:url('projects/project3.jpg')"></div><div class="in"><h4>Название проекта</h4><p class="mb-0">Краткое описание проекта в 2–3 предложениях.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- КОМАНДА -->
+<section class="sec" id="team">
+  <div class="container">
+    <h2 class="sec-title">Ключевые лица</h2><div class="orn"></div>
+    <div class="row g-4 justify-content-center">
+      <!-- Фото: положите файл people/person1.jpg (квадратное, лицо по центру) -->
+      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person1.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
+      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person2.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
+      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person3.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
+      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person4.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ПАРТНЁРЫ -->
+<section class="sec alt" id="partners">
+  <div class="container">
+    <h2 class="sec-title">Партнёры и сотрудничество</h2><div class="orn"></div>
+    <div class="row g-4">
+      <!-- Логотип партнёра: partners/partner1.png (и т.д.) -->
+      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner1.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner2.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner3.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner4.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner5.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
+      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner6.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОЖЕРТВОВАНИЯ -->
+<section class="sec" id="support">
+  <div class="container">
+    <h2 class="sec-title">Поддержать центр</h2><div class="orn"></div>
+    <div class="row justify-content-center"><div class="col-lg-7">
+      <p class="text-center mb-4">Здесь будет короткий текст о том, на что идут пожертвования.</p>
+      <div class="box facts">
+        <div><span>Организация</span><span>АНО ПЦ «Русский Навигатор»</span></div>
+        <div><span>ИНН / КПП</span><span class="fill">заполнить</span></div>
+        <div><span>Р/с</span><span class="fill">заполнить</span></div>
+        <div><span>Банк / БИК</span><span class="fill">заполнить</span></div>
+        <div><span>Назначение платежа</span><span>Добровольное пожертвование на уставную деятельность</span></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section class="sec alt" id="contacts">
+  <div class="container">
+    <h2 class="sec-title">Контакты</h2><div class="orn"></div>
+    <div class="row justify-content-center text-center g-4">
+      <div class="col-md-4"><h5>Адрес</h5><span class="fill">заполнить</span></div>
+      <div class="col-md-4"><h5>Почта</h5><span class="fill">заполнить</span></div>
+      <div class="col-md-4"><h5>Телефон</h5><span class="fill">заполнить</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container text-center">
+    <div class="brand fs-4 mb-2" style="color:#fff">Русский Навигатор</div>
+    <div class="small">© <span id="y"></span> АНО ПЦ «Русский Навигатор»</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
