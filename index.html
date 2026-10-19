@@ -47,10 +47,14 @@
     <main>
         <section class="hero hero--with-blobs">
             <div class="hero-blobs" aria-hidden="true"><div class="blob blob--1"></div><div class="blob blob--2"></div><div class="blob blob--3"></div></div>
-            <div class="hero-inner">
-                <img src="logo.png" class="hero-logo" data-logo alt="Русский Навигатор">
-                <h1>Автономная некоммерческая организация<br>Просветительский центр «Русский Навигатор»</h1>
-                <p class="hero-lead">Здесь будет девиз или краткое описание миссии центра — одно-два предложения.</p>
+            <div class="hero-inner hero-inner--ano">
+                <img src="emblem.png" class="hero-emblem" data-logo alt="Эмблема «Русский Навигатор»">
+                <div class="hero-text">
+                    <span class="hero-eyebrow">Автономная некоммерческая организация</span>
+                    <h1>Русский Навигатор</h1>
+                    <div class="hero-kind">Просветительский центр</div>
+                    <p class="hero-lead">Здесь будет девиз или краткое описание миссии центра — одно-два предложения.</p>
+                </div>
             </div>
         </section>
 
@@ -224,7 +228,7 @@
     <script>
     (function() {
         // Заглушки: нет файла — показываем тёплую заглушку; файл появился — фото само подставится
-        function ph(img) { var s = img.getAttribute('data-ph'); img.removeAttribute('src'); img.classList.add('is-ph'); if (s === 'logo') img.classList.add('ph-logo'); }
+        function ph(img) { var s = img.getAttribute('data-ph'); img.removeAttribute('src'); img.alt = ''; img.classList.add('is-ph'); if (s === 'logo') img.classList.add('ph-logo'); }
         document.querySelectorAll('img[data-ph]').forEach(function(img) {
             img.addEventListener('error', function() { ph(img); });
             if (img.complete && img.naturalWidth === 0) ph(img);
