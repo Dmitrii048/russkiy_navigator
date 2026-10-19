@@ -1101,7 +1101,7 @@ section { scroll-margin-top: var(--header-h); }
 
 /* ===== АНО «Русский Навигатор»: дополнения к стилям фонда ===== */
 .site-name { display: flex; align-items: center; gap: .6rem; }
-.site-logo { height: 46px; width: auto; max-width: none; }
+.site-logo { height: 54px; width: auto; max-width: none; }
 .site-name .site-name-text { display: none; }
 .site-name.no-logo .site-name-text { display: inline; }
 .hero-logo { max-height: 140px; width: auto; margin: 0 auto 1.5rem; }
@@ -1119,3 +1119,17 @@ img.is-ph.ph-logo {
     background-size: 38%;
 }
 .fill { background: #fff0b8; color: #6b3410; padding: 0 .3rem; border-radius: 3px; }
+
+/* Главный экран: эмблема слева, название справа */
+.hero-inner.hero-inner--ano { max-width: 980px; display: flex; align-items: center; justify-content: center; gap: clamp(1.5rem, 4vw, 3.5rem); text-align: left; }
+.hero-emblem { flex: 0 0 auto; width: clamp(170px, 24vw, 280px); height: auto; margin: 0; filter: drop-shadow(0 6px 18px rgba(44,36,25,.12)); }
+.hero-text { min-width: 0; padding-left: clamp(1rem, 3vw, 2.5rem); border-left: 2px solid var(--color-warm); }
+.hero-eyebrow { display: block; font-size: .8rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: .6rem; }
+.hero .hero-text h1 { font-size: clamp(2.2rem, 5.2vw, 3.6rem); font-weight: 700; line-height: 1.08; margin: 0 0 .35rem; letter-spacing: -0.02em; }
+.hero-kind { font-family: var(--font-heading); font-style: italic; font-size: clamp(1.25rem, 2.4vw, 1.7rem); color: var(--color-text-muted); margin-bottom: 1.1rem; }
+.hero-text .hero-lead { max-width: 480px; }
+@media (max-width: 720px) {
+    .hero-inner.hero-inner--ano { flex-direction: column; text-align: center; }
+    .hero-text { border-left: 0; padding-left: 0; border-top: 2px solid var(--color-warm); padding-top: 1.2rem; }
+    .hero-text .hero-lead { margin: 0 auto; }
+}
