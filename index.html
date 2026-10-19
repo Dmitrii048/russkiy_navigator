@@ -1,215 +1,272 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>АНО «Русский Навигатор» — Просветительский центр</title>
-<meta name="description" content="Просветительский центр «Русский Навигатор».">
-
-<!-- Open Graph (WhatsApp, Telegram, ВК). Замените ВАШ-ДОМЕН на адрес сайта -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="АНО Просветительский центр «Русский Навигатор»">
-<meta property="og:description" content="Просветительский центр «Русский Навигатор»: проекты, команда, партнёры.">
-<meta property="og:url" content="https://ВАШ-ДОМЕН/">
-<meta property="og:image" content="https://ВАШ-ДОМЕН/logo.png">
-<meta property="og:site_name" content="Русский Навигатор">
-<meta property="og:locale" content="ru_RU">
-
-<link rel="icon" type="image/png" href="logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-:root{--cream:#fbf5ea;--sand:#f1e4cc;--wine:#8b3a2b;--wine-d:#6b2b1f;--gold:#b98a3e;--brown:#3d2b20;--muted:#7a6656}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font-family:'Lora',serif;color:var(--brown);background:var(--cream);line-height:1.75}
-h1,h2,h3,h4,h5,.brand{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;color:var(--wine-d)}
-.navbar{background:rgba(251,245,234,.96);border-bottom:1px solid #e6d5b5;backdrop-filter:blur(6px)}
-.navbar-brand img{height:48px;width:auto}
-.brand-fallback{display:none;font-size:1.6rem}
-.nav-link{color:var(--brown)!important;font-size:.95rem}
-.nav-link:hover{color:var(--wine)!important}
-.btn-main{background:var(--wine);color:#fff;border:1px solid var(--wine);border-radius:3px;padding:.65rem 1.6rem;letter-spacing:.04em}
-.btn-main:hover{background:var(--wine-d);color:#fff}
-.btn-line{border:1px solid var(--wine);color:var(--wine);border-radius:3px;padding:.65rem 1.6rem}
-.btn-line:hover{background:var(--wine);color:#fff}
-.hero{padding:100px 0 90px;text-align:center;background:radial-gradient(circle at 50% 0%,#fff3d9 0%,var(--cream) 70%);border-bottom:1px solid #ecdcbc}
-.hero .logo-big{max-height:150px;max-width:100%;margin-bottom:1.5rem}
-.hero h1{font-size:clamp(2.3rem,5vw,3.8rem);line-height:1.1}
-.hero .lead{font-style:italic;color:var(--muted);max-width:680px;margin:1.2rem auto 2rem}
-.eyebrow{display:block;text-transform:uppercase;letter-spacing:.22em;font-size:.74rem;color:var(--gold);margin-bottom:.6rem}
-.sec{padding:84px 0}
-.alt{background:var(--sand)}
-.sec-title{font-size:2.5rem;text-align:center;margin-bottom:.3rem}
-.orn{text-align:center;color:var(--gold);margin-bottom:2.8rem;letter-spacing:.5em}
-.orn::before{content:"✦ ✦ ✦"}
-.box{background:#fffdf8;border:1px solid #e6d5b5;border-radius:6px;padding:1.8rem;height:100%}
-.facts div{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px dashed #d9c49b;font-size:.96rem}
-.facts div:last-child{border:0}
-.facts span:first-child{color:var(--muted)}
-.facts span:last-child{font-weight:600;text-align:right}
-
-/* Заготовки под фото: если файла нет — виден значок, если файл появился — фото */
-.ph{background-color:#ead9b8;background-size:cover;background-position:center;position:relative;overflow:hidden}
-.ph::before{content:"";position:absolute;inset:0;background:center/32% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b98a3e' opacity='.55'%3E%3Cpath d='M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z'/%3E%3C/svg%3E")}
-.ph.img::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b98a3e' opacity='.55'%3E%3Cpath d='M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z'/%3E%3C/svg%3E")}
-.avatar{width:170px;height:170px;border-radius:50%;margin:0 auto 1.1rem;border:4px solid #fffdf8;box-shadow:0 0 0 2px var(--gold)}
-.person{text-align:center}
-.person h5{font-size:1.35rem;margin-bottom:.1rem}
-.person small{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
-.cover{height:190px;border-radius:6px 6px 0 0}
-.proj{padding:0;overflow:hidden}
-.proj .in{padding:1.4rem 1.5rem 1.6rem}
-.proj,.partner{transition:.25s}
-.proj:hover,.partner:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(107,43,31,.12)}
-.partner{text-align:center;padding:1.4rem 1rem}
-.partner .plogo{height:90px;border-radius:6px;margin-bottom:.8rem}
-.partner .plogo::before{background-size:30%}
-.partner h6{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--wine-d);margin:0}
-footer{background:var(--brown);color:#dfcfb4;padding:50px 0 24px;font-size:.9rem}
-footer a{color:#dfcfb4;text-decoration:none}footer a:hover{color:#fff}
-.fill{background:#fff0b8;padding:0 .3rem;border-radius:2px;font-weight:400!important}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="АНО Просветительский центр «Русский Навигатор» — официальный сайт.">
+    <meta name="robots" content="index, follow">
+    <!-- Замените ВАШ-ДОМЕН на адрес сайта -->
+    <link rel="canonical" href="https://ВАШ-ДОМЕН/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ВАШ-ДОМЕН/">
+    <meta property="og:title" content="АНО Просветительский центр «Русский Навигатор»">
+    <meta property="og:description" content="Официальный сайт АНО Просветительский центр «Русский Навигатор».">
+    <meta property="og:image" content="https://ВАШ-ДОМЕН/logo.png">
+    <meta property="og:locale" content="ru_RU">
+    <title>АНО «Русский Навигатор» — Просветительский центр</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#top">
-      <!-- ЛОГОТИП: загрузите файл logo.png в корень репозитория, рядом с index.html -->
-      <img src="logo.png" alt="Русский Навигатор" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="brand brand-fallback">Русский Навигатор</span>
-    </a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="#about">О центре</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
-        <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
-        <li class="nav-item"><a class="nav-link" href="#partners">Партнёры</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
-        <li class="nav-item ms-lg-3"><a class="btn btn-main" href="#support">Поддержать</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="hero" id="top">
-  <div class="container">
-    <img src="logo.png" alt="" class="logo-big" onerror="this.style.display='none'">
-    <span class="eyebrow">Автономная некоммерческая организация</span>
-    <h1>Просветительский центр<br>«Русский Навигатор»</h1>
-    <p class="lead">Здесь будет девиз или краткое описание миссии центра — одно-два предложения.</p>
-    <a href="#about" class="btn btn-main me-2">О центре</a>
-    <a href="#support" class="btn btn-line">Поддержать</a>
-  </div>
-</header>
-
-<!-- ОСНОВНЫЕ СВЕДЕНИЯ -->
-<section class="sec" id="about">
-  <div class="container">
-    <h2 class="sec-title">Основные сведения</h2><div class="orn"></div>
-    <div class="row g-4">
-      <div class="col-lg-7">
-        <div class="box">
-          <h4>О центре</h4>
-          <p>Здесь будет рассказ об организации: когда и с какой целью создана, чем занимается, какие задачи решает.</p>
-          <p class="mb-0">Второй абзац: история, принципы работы, география деятельности.</p>
+    <header class="site-header">
+        <div class="header-inner">
+            <!-- ЛОГОТИП: положите файл logo.png в корень репозитория (рядом с index.html) -->
+            <a href="#" class="site-name"><img src="logo.png" class="site-logo" data-logo alt="Русский Навигатор"><span class="site-name-text">АНО «Русский Навигатор»</span></a>
+            <nav class="site-nav">
+                <a href="#about" class="nav-link"><span>О центре</span></a><a href="#docs" class="nav-link"><span>Документы</span></a><a href="#activity" class="nav-link"><span>Деятельность</span></a><a href="#team" class="nav-link"><span>Команда</span></a><a href="#news" class="nav-link"><span>Новости</span></a><a href="#contacts" class="nav-link"><span>Контакты</span></a><a href="#contact" class="nav-link"><span>Партнёры</span></a>
+            </nav>
+            <button class="menu-toggle" aria-label="Меню" aria-expanded="false"><span></span></button>
         </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="box facts">
-          <h4>Сведения об организации</h4>
-          <div><span>Полное наименование</span><span>АНО ПЦ «Русский Навигатор»</span></div>
-          <div><span>Дата регистрации</span><span class="fill">заполнить</span></div>
-          <div><span>Руководитель</span><span class="fill">заполнить</span></div>
-          <div><span>ИНН / ОГРН</span><span class="fill">заполнить</span></div>
-          <div><span>Адрес</span><span class="fill">заполнить</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<!-- ПРОЕКТЫ -->
-<section class="sec alt" id="projects">
-  <div class="container">
-    <h2 class="sec-title">Наши проекты</h2><div class="orn"></div>
-    <div class="row g-4">
-      <!-- Обложка: положите файл projects/project1.jpg (и т.д.) — фото подставится само -->
-      <div class="col-md-4"><div class="box proj"><div class="cover ph img" style="background-image:url('projects/project1.jpg')"></div><div class="in"><h4>Название проекта</h4><p class="mb-0">Краткое описание проекта в 2–3 предложениях.</p></div></div></div>
-      <div class="col-md-4"><div class="box proj"><div class="cover ph img" style="background-image:url('projects/project2.jpg')"></div><div class="in"><h4>Название проекта</h4><p class="mb-0">Краткое описание проекта в 2–3 предложениях.</p></div></div></div>
-      <div class="col-md-4"><div class="box proj"><div class="cover ph img" style="background-image:url('projects/project3.jpg')"></div><div class="in"><h4>Название проекта</h4><p class="mb-0">Краткое описание проекта в 2–3 предложениях.</p></div></div></div>
-    </div>
-  </div>
-</section>
+    <div class="menu-overlay" aria-hidden="true"></div>
+    <nav class="mobile-nav" aria-label="Мобильное меню">
+        <a href="#about" class="mobile-nav-link">О центре</a>
+        <a href="#docs" class="mobile-nav-link">Документы</a>
+        <a href="#activity" class="mobile-nav-link">Деятельность</a>
+        <a href="#team" class="mobile-nav-link">Команда</a>
+        <a href="#news" class="mobile-nav-link">Новости</a>
+        <a href="#contacts" class="mobile-nav-link">Контакты</a>
+        <a href="#contact" class="mobile-nav-link">Партнёры</a>
+    </nav>
 
-<!-- КОМАНДА -->
-<section class="sec" id="team">
-  <div class="container">
-    <h2 class="sec-title">Ключевые лица</h2><div class="orn"></div>
-    <div class="row g-4 justify-content-center">
-      <!-- Фото: положите файл people/person1.jpg (квадратное, лицо по центру) -->
-      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person1.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
-      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person2.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
-      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person3.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
-      <div class="col-6 col-lg-3 person"><div class="avatar ph" style="background-image:url('people/person4.jpg')"></div><h5>Фамилия Имя Отчество</h5><small>Должность</small></div>
-    </div>
-  </div>
-</section>
+    <main>
+        <section class="hero hero--with-blobs">
+            <div class="hero-blobs" aria-hidden="true"><div class="blob blob--1"></div><div class="blob blob--2"></div><div class="blob blob--3"></div></div>
+            <div class="hero-inner">
+                <img src="logo.png" class="hero-logo" data-logo alt="Русский Навигатор">
+                <h1>Автономная некоммерческая организация<br>Просветительский центр «Русский Навигатор»</h1>
+                <p class="hero-lead">Здесь будет девиз или краткое описание миссии центра — одно-два предложения.</p>
+            </div>
+        </section>
 
-<!-- ПАРТНЁРЫ -->
-<section class="sec alt" id="partners">
-  <div class="container">
-    <h2 class="sec-title">Партнёры и сотрудничество</h2><div class="orn"></div>
-    <div class="row g-4">
-      <!-- Логотип партнёра: partners/partner1.png (и т.д.) -->
-      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner1.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
-      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner2.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
-      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner3.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
-      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner4.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
-      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner5.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
-      <div class="col-6 col-md-4 col-lg-2"><div class="box partner"><div class="plogo ph img" style="background-image:url('partners/partner6.png');background-size:contain;background-repeat:no-repeat"></div><h6>Организация</h6></div></div>
-    </div>
-  </div>
-</section>
+        <section id="about" class="section section--alt">
+            <div class="container">
+                <h2 class="section-title">О центре</h2>
+                <div class="about-grid">
+                    <div class="about-block">
+                        <h3>Руководство</h3>
+                        <div class="leadership">
+                            <article class="person">
+                                <img src="assets/person1.jpg" data-ph alt="Фото" width="96" height="96" loading="lazy">
+                                <div><strong>Фамилия Имя Отчество</strong><span>Должность</span></div>
+                            </article>
+                            <article class="person">
+                                <img src="assets/person2.jpg" data-ph alt="Фото" width="96" height="96" loading="lazy">
+                                <div><strong>Фамилия Имя Отчество</strong><span>Должность</span></div>
+                            </article>
+                            <article class="person">
+                                <img src="assets/person3.jpg" data-ph alt="Фото" width="96" height="96" loading="lazy">
+                                <div><strong>Фамилия Имя Отчество</strong><span>Должность</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="about-block about-block--info">
+                        <h3>Реквизиты</h3>
+                        <p><strong>Полное наименование:</strong> Автономная некоммерческая организация Просветительский центр «Русский Навигатор»</p>
+                        <p><strong>ИНН / КПП:</strong> <span class="fill">заполнить</span></p>
+                        <p><strong>ОГРН:</strong> <span class="fill">заполнить</span></p>
+                        <p><strong>Адрес:</strong> <span class="fill">заполнить</span></p>
+                        <p><strong>Учредитель:</strong> <span class="fill">заполнить</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- ПОЖЕРТВОВАНИЯ -->
-<section class="sec" id="support">
-  <div class="container">
-    <h2 class="sec-title">Поддержать центр</h2><div class="orn"></div>
-    <div class="row justify-content-center"><div class="col-lg-7">
-      <p class="text-center mb-4">Здесь будет короткий текст о том, на что идут пожертвования.</p>
-      <div class="box facts">
-        <div><span>Организация</span><span>АНО ПЦ «Русский Навигатор»</span></div>
-        <div><span>ИНН / КПП</span><span class="fill">заполнить</span></div>
-        <div><span>Р/с</span><span class="fill">заполнить</span></div>
-        <div><span>Банк / БИК</span><span class="fill">заполнить</span></div>
-        <div><span>Назначение платежа</span><span>Добровольное пожертвование на уставную деятельность</span></div>
-      </div>
-    </div></div>
-  </div>
-</section>
+        <section id="docs" class="section">
+            <div class="container">
+                <h2 class="section-title">Устав и отчётность</h2>
+                <div class="doc-section">
+                    <h3 class="doc-section-title">Устав</h3>
+                    <div class="doc-grid"><a href="assets/ustav.pdf" target="_blank" rel="noopener noreferrer" class="doc-card"><span class="doc-card-text">Устав АНО ПЦ «Русский Навигатор»</span><span class="doc-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span></a></div>
+                </div>
+                <div class="doc-section">
+                    <h3 class="doc-section-title">Отчётность по годам</h3>
+                    <h4 class="doc-year-title">2025</h4>
+                    <div class="doc-grid"><a href="assets/report-2025.pdf" target="_blank" rel="noopener noreferrer" class="doc-card"><span class="doc-card-text">Бухгалтерская отчётность 2025</span><span class="doc-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span></a><a href="assets/activity-2025.pdf" target="_blank" rel="noopener noreferrer" class="doc-card"><span class="doc-card-text">Отчёт о деятельности 2025</span><span class="doc-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span></a></div>
+                </div>
+            </div>
+        </section>
 
-<!-- КОНТАКТЫ -->
-<section class="sec alt" id="contacts">
-  <div class="container">
-    <h2 class="sec-title">Контакты</h2><div class="orn"></div>
-    <div class="row justify-content-center text-center g-4">
-      <div class="col-md-4"><h5>Адрес</h5><span class="fill">заполнить</span></div>
-      <div class="col-md-4"><h5>Почта</h5><span class="fill">заполнить</span></div>
-      <div class="col-md-4"><h5>Телефон</h5><span class="fill">заполнить</span></div>
-    </div>
-  </div>
-</section>
+        <section id="activity" class="section section--alt section--with-blob">
+            <div class="section-blob" aria-hidden="true"></div>
+            <div class="container">
+                <h2 class="section-title">Деятельность</h2>
+                <div class="prose prose--wide">
+                    <p>Первый абзац: чем занимается центр, в каких регионах и направлениях работает.</p>
+                    <p>Второй абзац: на что направлены проекты, какие задачи решают.</p>
+                    <p>Третий абзац: ключевые результаты — количество проектов, участников, мероприятий.</p>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary">Сайт главного проекта →</a>
+                    <a href="#" class="btn btn-outline">Telegram</a>
+                    <a href="#" class="btn btn-outline">ВКонтакте</a>
+                </div>
+            </div>
+        </section>
 
-<footer>
-  <div class="container text-center">
-    <div class="brand fs-4 mb-2" style="color:#fff">Русский Навигатор</div>
-    <div class="small">© <span id="y"></span> АНО ПЦ «Русский Навигатор»</div>
-  </div>
-</footer>
+        <section class="section section--subprojects">
+            <div class="container">
+                <h2 class="section-title">Наши подразделения и проекты</h2>
+                <div class="units-grid">
+                    <a href="#" class="unit-card">
+                        <span class="unit-logo"><img src="assets/unit1.png" data-ph="logo" alt="Логотип проекта"></span>
+                        <span class="unit-title">Название проекта или подразделения</span>
+                    </a>
+                    <a href="#" class="unit-card">
+                        <span class="unit-logo"><img src="assets/unit2.png" data-ph="logo" alt="Логотип проекта"></span>
+                        <span class="unit-title">Название проекта или подразделения</span>
+                    </a>
+                    <a href="#" class="unit-card">
+                        <span class="unit-logo"><img src="assets/unit3.png" data-ph="logo" alt="Логотип проекта"></span>
+                        <span class="unit-title">Название проекта или подразделения</span>
+                    </a>
+                    <a href="#" class="unit-card">
+                        <span class="unit-logo"><img src="assets/unit4.png" data-ph="logo" alt="Логотип проекта"></span>
+                        <span class="unit-title">Название проекта или подразделения</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Реализованные проекты</h2>
+                <div class="prose prose--projects">
+                    <details class="project">
+                        <summary>Название проекта — год</summary>
+                        <div class="project-content"><p>Описание проекта: сроки, при поддержке кого реализован, что сделано, результаты.</p></div>
+                    </details>
+                    <details class="project">
+                        <summary>Название проекта — год</summary>
+                        <div class="project-content"><p>Описание проекта: сроки, при поддержке кого реализован, что сделано, результаты.</p></div>
+                    </details>
+                    <details class="project">
+                        <summary>Название проекта — год</summary>
+                        <div class="project-content"><p>Описание проекта: сроки, при поддержке кого реализован, что сделано, результаты.</p></div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="section section--alt">
+            <div class="container">
+                <h2 class="section-title">Команда центра</h2>
+                <div class="team-grid">
+                    <div class="team-member"><img src="assets/member1.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                    <div class="team-member"><img src="assets/member2.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                    <div class="team-member"><img src="assets/member3.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                    <div class="team-member"><img src="assets/member4.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                    <div class="team-member"><img src="assets/member5.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                    <div class="team-member"><img src="assets/member6.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                    <div class="team-member"><img src="assets/member7.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                    <div class="team-member"><img src="assets/member8.jpg" data-ph alt="Фото" loading="lazy"><span>Фамилия Имя</span><small>Должность</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section">
+            <div class="container container--narrow">
+                <h2 class="section-title">Новости</h2>
+                <div class="project-links" style="justify-content:center">
+                    <a href="#" class="btn btn-primary">Наши новости в Telegram</a>
+                    <a href="#" class="btn btn-outline">Мы ВКонтакте</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section--dark">
+            <div class="container">
+                <h2 class="section-title" id="contacts">Контакты</h2>
+                <div class="footer-bottom"><div class="footer-contacts"><div class="footer-contacts-grid">
+                            <div class="footer-contact-card">
+                                <div class="footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                                <div class="footer-contact-content"><div class="footer-contact-label">Адрес</div><div class="footer-contact-value"><span class="fill">заполнить</span></div></div>
+                            </div>
+                            <div class="footer-contact-card">
+                                <div class="footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                                <div class="footer-contact-content"><div class="footer-contact-label">Телефон</div><div class="footer-contact-value"><span class="fill">заполнить</span></div></div>
+                            </div>
+                            <div class="footer-contact-card">
+                                <div class="footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" fill="none"/><polyline points="4 4 12 11 20 4"/></svg></div>
+                                <div class="footer-contact-content"><div class="footer-contact-label">Эл. почта</div><div class="footer-contact-value"><span class="fill">заполнить</span></div></div>
+                            </div>
+                </div></div></div>
+                <h2 class="section-title">Партнёры</h2>
+                <div class="partners">
+                    <a href="#" class="partner"><span class="partner-logo"><img src="assets/partner1.png" data-ph="logo" alt="Логотип партнёра"></span><span>Название организации</span></a>
+                    <a href="#" class="partner"><span class="partner-logo"><img src="assets/partner2.png" data-ph="logo" alt="Логотип партнёра"></span><span>Название организации</span></a>
+                    <a href="#" class="partner"><span class="partner-logo"><img src="assets/partner3.png" data-ph="logo" alt="Логотип партнёра"></span><span>Название организации</span></a>
+                    <a href="#" class="partner"><span class="partner-logo"><img src="assets/partner4.png" data-ph="logo" alt="Логотип партнёра"></span><span>Название организации</span></a>
+                </div>
+                <div class="partners-separator"></div>
+                <p class="copyright">© <span id="year"></span> АНО Просветительский центр «Русский Навигатор» — официальный сайт</p>
+            </div>
+        </section>
+    </main>
+
+    <a href="#" class="scroll-top" aria-label="Наверх"></a>
+
+    <script>
+    (function() {
+        // Заглушки: нет файла — показываем тёплую заглушку; файл появился — фото само подставится
+        function ph(img) { var s = img.getAttribute('data-ph'); img.removeAttribute('src'); img.classList.add('is-ph'); if (s === 'logo') img.classList.add('ph-logo'); }
+        document.querySelectorAll('img[data-ph]').forEach(function(img) {
+            img.addEventListener('error', function() { ph(img); });
+            if (img.complete && img.naturalWidth === 0) ph(img);
+        });
+        // Логотип: нет файла — показываем текстовое название
+        document.querySelectorAll('img[data-logo]').forEach(function(img) {
+            function fail() { img.style.display = 'none'; var p = img.closest('.site-name'); if (p) p.classList.add('no-logo'); }
+            img.addEventListener('error', fail);
+            if (img.complete && img.naturalWidth === 0) fail();
+        });
+
+        var toggle = document.querySelector('.menu-toggle'), mobileNav = document.querySelector('.mobile-nav'), overlay = document.querySelector('.menu-overlay');
+        function open() { mobileNav.classList.add('open'); overlay.classList.add('open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+        function close() { mobileNav.classList.remove('open'); overlay.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+        if (toggle) toggle.addEventListener('click', function() { mobileNav.classList.contains('open') ? close() : open(); });
+        if (overlay) overlay.addEventListener('click', close);
+        if (mobileNav) mobileNav.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', close); });
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var id = this.getAttribute('href');
+                if (id === '#') return;
+                e.preventDefault();
+                var el = document.querySelector(id);
+                if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' });
+            });
+        });
+
+        var scrollTop = document.querySelector('.scroll-top');
+        if (scrollTop) scrollTop.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        var header = document.querySelector('.site-header'), navLinks = document.querySelectorAll('.nav-link');
+        var sections = ['about', 'docs', 'activity', 'team', 'news', 'contact', 'contacts'];
+        function update() {
+            var y = window.scrollY + 120, active = '';
+            sections.forEach(function(id) { var el = document.getElementById(id); if (el && el.offsetTop <= y && el.offsetTop + el.offsetHeight > y) active = '#' + id; });
+            navLinks.forEach(function(a) { a.classList.toggle('active', a.getAttribute('href') === active); });
+            if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+            if (scrollTop) scrollTop.classList.toggle('visible', window.scrollY > 400);
+        }
+        window.addEventListener('scroll', update); update();
+        document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+    </script>
 </body>
 </html>
